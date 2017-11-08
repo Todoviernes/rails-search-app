@@ -1,0 +1,18 @@
+<h1>Jukebox</h1>
+
+
+<%= form_tag site_search_path do %>
+  <%= search_field_tag :term %>
+  <%= submit_tag "search" %>
+<% end %>
+
+<%#= params %>
+
+<br>
+<% unless @results.nil? %>
+  <h2>Search Results</h2>
+  <br>
+  <% @results.each do |result| %>
+    <h3><%= link_to result.name, result %></h3>
+  <% end %>
+<% end %>
